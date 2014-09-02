@@ -1,0 +1,22 @@
+{
+  "name": "transform-perf",
+  "version": "0.0.1",
+  "homepage": "https://github.com/transformjs/transform-perf",
+  "authors": [
+    "zhongchiyu <zhongchiyu@gmail.com>"
+  ],
+  "description": "performance entries compess and uncompress util",
+  "main": "perf.js",
+  "keywords": [
+    "performance",
+    "transform"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
