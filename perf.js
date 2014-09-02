@@ -7,7 +7,7 @@ var global = typeof exports === 'undefined' ? window : exports;
 global.TransformPerf = {
     compress: function(entries) {
         var urlPattern = new RegExp('^([^:]+)://([^/]+)(.+)$');
-        var timings = this.timings;
+        var timings = global.TransformPerf.timings;
         var archive = {};
 
         for (var i=0; i<entries.length; i++) {
@@ -52,7 +52,7 @@ global.TransformPerf = {
     },
 
     uncompress: function(archive) {
-        var timings = this.timings;
+        var timings = global.TransformPerf.timings;
 
         return walk([], archive, []);
 
