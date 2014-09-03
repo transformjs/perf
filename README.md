@@ -4,7 +4,13 @@ performance entries compess and uncompress util
 
 ## Installation
 
+As node package
+
     npm install transform-perf
+
+As bower package
+
+    bower install transform-perf
 
 ## Usage
 
