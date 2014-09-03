@@ -1,5 +1,7 @@
 # perf
 
+[![Build Status](https://travis-ci.org/transformjs/transform-perf.svg?branch=master)](https://travis-ci.org/transformjs/transform-perf)
+
 performance entries compess and uncompress util
 
 ## Installation
