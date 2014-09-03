@@ -1,11 +1,16 @@
 {
   "name": "transform-perf",
-  "version": "0.0.10",
+  "version": "0.0.15",
   "description": "performance entries compess and uncompress util",
   "author": "CatTail",
   "repository": "https://github.com/transformjs/transform-perf",
   "main": "perf.js",
   "license": "MIT",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test"
+  },
   "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.21.4"
   }
 }
