@@ -63,10 +63,12 @@ global.TransformPerf = {
         }
 
         function walk(entries, archive, parts) {
+            var entry;
             if (typeof archive.timing === 'object') {
-                archive.name = join(parts);
-                collect(archive, archive);
-                entries.push(archive);
+                entry = {};
+                entry.name = join(parts);
+                collect(archive, entry);
+                entries.push(entry);
             } else {
                 var newParts;
                 for (var part in archive) {
@@ -81,8 +83,6 @@ global.TransformPerf = {
         function collect(item, entry) {
             entry.initiatorType = item.initiatorType;
             entry.entryType = item.entryType;
-            // restore entry name
-            entry.name = item.name;
             for (var index in timings) {
                 entry[timings[index]] = item.timing[index];
             }
