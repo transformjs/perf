@@ -41,11 +41,15 @@ global.TransformPerf = {
         }
 
         function seed(item, entry) {
-            item.initiatorType = entry.initiatorType;
-            item.entryType = entry.entryType;
             item.timing = [];
             for (var index in timings) {
                 item.timing[index] = Math.round(entry[timings[index]]);
+                delete entry[timings[index]];
+            }
+            for (var key in entry) {
+                if (key !== 'name') {
+                    item[key] = entry[key];
+                }
             }
             return item;
         }
@@ -81,10 +85,12 @@ global.TransformPerf = {
         }
 
         function collect(item, entry) {
-            entry.initiatorType = item.initiatorType;
-            entry.entryType = item.entryType;
             for (var index in timings) {
                 entry[timings[index]] = item.timing[index];
+            }
+            delete item.timing;
+            for (var key in item) {
+                entry[key] = item[key];
             }
             return entry;
         }
