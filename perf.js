@@ -41,9 +41,9 @@ global.TransformPerf = {
         }
 
         function seed(item, entry) {
-            item.timing = [];
+            item.timings = [];
             for (var index in timings) {
-                item.timing[index] = Math.round(entry[timings[index]]);
+                item.timings[index] = Math.round(entry[timings[index]]);
                 delete entry[timings[index]];
             }
             for (var key in entry) {
@@ -68,7 +68,7 @@ global.TransformPerf = {
 
         function walk(entries, archive, parts) {
             var entry;
-            if (typeof archive.timing === 'object') {
+            if (typeof archive.timings === 'object') {
                 entry = {};
                 entry.name = join(parts);
                 collect(archive, entry);
@@ -86,9 +86,9 @@ global.TransformPerf = {
 
         function collect(item, entry) {
             for (var index in timings) {
-                entry[timings[index]] = item.timing[index];
+                entry[timings[index]] = item.timings[index];
             }
-            delete item.timing;
+            delete item.timings;
             for (var key in item) {
                 entry[key] = item[key];
             }
