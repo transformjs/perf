@@ -1,3 +1,2 @@
 [pre-commit]
     pre-commit/jshint
-    nodejs/bumper
