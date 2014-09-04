@@ -1,6 +1,6 @@
 {
   "name": "transform-perf",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "homepage": "https://github.com/transformjs/transform-perf",
   "authors": [
     "zhongchiyu <zhongchiyu@gmail.com>"
