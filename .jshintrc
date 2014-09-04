@@ -36,7 +36,6 @@
         "id",
         "google"
     ],
-    "indent": 4,
     "devel": true,
     "noempty": true,
     "sub": true,

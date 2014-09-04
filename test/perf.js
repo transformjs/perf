@@ -9,6 +9,8 @@ var TransformPerf = require('../').TransformPerf,
     expect = chai.expect;
 
 describe('perf', function() {
+    var timings = TransformPerf.getTimingNames();
+
     function findOne(archive) {
         if (typeof archive.timings === 'object') {
             return archive;
@@ -32,7 +34,7 @@ describe('perf', function() {
         it('should store common timing value in single array', function() {
             var archive = findOne(compress(entries));
             expect(archive.timings).to.be.instanceOf(Array);
-            expect(archive.timings.length).to.equal(TransformPerf.timings.length);
+            expect(archive.timings.length).to.equal(timings.length);
         });
 
         it('should preserve misc values', function() {
@@ -52,7 +54,7 @@ describe('perf', function() {
         });
 
         it('should restore timing values', function() {
-            for (var key in TransformPerf.timings) {
+            for (var key in timings) {
                 expect([entry[key]]).to.exist;
             }
         });
