@@ -59,7 +59,7 @@ Result:
 
 ## TODO
 
-  * test
+  * refact code for better test
 
 ## License
 

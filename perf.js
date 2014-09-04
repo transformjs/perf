@@ -7,6 +7,10 @@
 
     var global = typeof exports === 'undefined' ? window : exports;
 
+    function isArray(arr) {
+        return typeof arr === 'object' && arr.length !== undefined;
+    }
+
     global.TransformPerf = {
         compress: function(entries) {
             var urlPattern = new RegExp('^([^:]+)://([^/]+)(.+)$');
@@ -43,14 +47,18 @@
                 return cur;
             }
 
-            function seed(item, entry) {
+            function seed(mount, entry) {
+                mount.$$ || (mount.$$ = []);
+
+                var item = {};
+                mount.$$.push(item);
+
                 item.timings = [];
                 for (var index in timings) {
                     item.timings[index] = Math.round(entry[timings[index]]);
-                    delete entry[timings[index]];
                 }
                 for (var key in entry) {
-                    if (key !== 'name') {
+                    if (key !== 'name' && !~timings.indexOf(key)) {
                         item[key] = entry[key];
                     }
                 }
@@ -70,15 +78,16 @@
             }
 
             function walk(entries, archive, parts) {
-                var entry;
-                if (typeof archive.timings === 'object') {
-                    entry = {};
-                    entry.name = join(parts);
-                    collect(archive, entry);
-                    entries.push(entry);
-                } else {
-                    var newParts;
-                    for (var part in archive) {
+                var entry, newParts;
+                for (var part in archive) {
+                    if (part === '$$' && isArray(archive.$$)) {
+                        for (var i=0; i<archive.$$.length; i++) {
+                            entry = {};
+                            entry.name = join(parts);
+                            collect(archive.$$[i], entry);
+                            entries.push(entry);
+                        }
+                    } else {
                         newParts = parts.slice();
                         newParts.push(part);
                         walk(entries, archive[part], newParts);
