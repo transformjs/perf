@@ -1,7 +1,7 @@
 {
-  "name": "transform-perf",
+  "name": "tran-perf",
   "version": "0.0.29",
-  "homepage": "https://github.com/transformjs/transform-perf",
+  "homepage": "https://github.com/transformjs/tran-perf",
   "authors": [
     "zhongchiyu <zhongchiyu@gmail.com>"
   ],
@@ -9,7 +9,8 @@
   "main": "perf.js",
   "keywords": [
     "performance",
-    "transform"
+    "transform",
+    "tran"
   ],
   "license": "MIT",
   "ignore": [

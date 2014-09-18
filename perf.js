@@ -11,10 +11,10 @@
         return typeof arr === 'object' && arr.length !== undefined;
     }
 
-    global.TransformPerf = {
+    global.TransformPerf = global.TranPerf = {
         compress: function(entries) {
             var urlPattern = new RegExp('^([^:]+)://([^/]+)(.+)$');
-            var timings = global.TransformPerf.timings;
+            var timings = global.TranPerf.timings;
             var archive = {};
 
             for (var i=0; i<entries.length; i++) {
@@ -67,7 +67,7 @@
         },
 
         uncompress: function(archive) {
-            var timings = global.TransformPerf.timings;
+            var timings = global.TranPerf.timings;
 
             return walk([], archive, []);
 
@@ -109,7 +109,7 @@
         },
 
         getTimingNames: function() {
-            return global.TransformPerf.timings;
+            return global.TranPerf.timings;
         },
 
         timings: [

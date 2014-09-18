@@ -1,6 +1,6 @@
 # perf
 
-[![Build Status](https://travis-ci.org/transformjs/transform-perf.svg?branch=master)](https://travis-ci.org/transformjs/transform-perf)
+[![Build Status](https://travis-ci.org/transformjs/tran-perf.svg?branch=master)](https://travis-ci.org/transformjs/tran-perf)
 
 performance entries compess and uncompress util
 
@@ -8,24 +8,24 @@ performance entries compess and uncompress util
 
 As node package
 
-    npm install transform-perf
+    npm install tran-perf
 
 As bower package
 
-    bower install transform-perf
+    bower install tran-perf
 
 ## Usage
 
 In browser,
 
     var entries = window.performance.getEntries();
-    TransformPerf.compess(entries);
+    TranPerf.compess(entries);
     // send data to server
 
 In NodeJS,
 
-    var TransformPerf = require('transform-perf').TransformPerf;
-    TransformPerf.uncompress(archive); // uncompress recived archive
+    var TranPerf = require('tran-perf').TranPerf;
+    TranPerf.uncompress(archive); // uncompress recived archive
 
 ## Benchmark
 
