@@ -1,9 +1,9 @@
 {
-  "name": "transform-perf",
+  "name": "tran-perf",
   "version": "0.0.29",
   "description": "performance entries compess and uncompress util",
   "author": "CatTail",
-  "repository": "https://github.com/transformjs/transform-perf",
+  "repository": "https://github.com/transformjs/tran-perf",
   "main": "perf.js",
   "license": "MIT",
   "scripts": {

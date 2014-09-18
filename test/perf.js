@@ -1,15 +1,15 @@
 'use strict';
 /* global it */
 
-var TransformPerf = require('../').TransformPerf,
-    compress = TransformPerf.compress,
-    uncompress = TransformPerf.uncompress,
+var TranPerf = require('../').TranPerf,
+    compress = TranPerf.compress,
+    uncompress = TranPerf.uncompress,
     entries = require('./entries'),
     chai = require('chai'),
     expect = chai.expect;
 
 describe('perf', function() {
-    var timings = TransformPerf.getTimingNames();
+    var timings = TranPerf.getTimingNames();
 
     function findOne(archive) {
         if (typeof archive.timings === 'object') {
