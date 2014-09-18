@@ -1,6 +1,6 @@
 # perf
 
-[![Build Status](https://travis-ci.org/transformjs/tran-perf.svg?branch=master)](https://travis-ci.org/transformjs/tran-perf)
+[![Build Status](https://travis-ci.org/transformjs/perf.svg?branch=master)](https://travis-ci.org/transformjs/perf)
 
 performance entries compess and uncompress util
 
